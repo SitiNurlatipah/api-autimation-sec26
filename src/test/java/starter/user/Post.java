@@ -29,8 +29,8 @@ public class Post {
     }
     @Step("I receive valid data for new user")
     public void validateDataForDetailUser(){
-        restAssuredThat(response->response.body("'data'.'name'",equalTo("morpheus")));
-        restAssuredThat(response->response.body("'data'.'job'",equalTo("leader")));
+        restAssuredThat(response->response.body("'name'",equalTo("morpheus")));
+        restAssuredThat(response->response.body("'job'",equalTo("leader")));
     }
 
 }
