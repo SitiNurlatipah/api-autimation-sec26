@@ -8,3 +8,9 @@ Feature: User
     When I send GET HTTP request
     Then I receive valid HTTP response code 200
     And I receive valid data for detail user
+
+  Scenario: Post - As admin I have able to create new user
+    Given I set POST api endpoints
+    When I send POST HTTP request
+    Then I receive valid HTTP response code 201
+    And I receive valid data for new user
