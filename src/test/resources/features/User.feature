@@ -14,3 +14,14 @@ Feature: User
     When I send POST HTTP request
     Then I receive valid HTTP response code 201
     And I receive valid data for new user
+
+  Scenario: Delete - As Admin I have able to delete user
+    Given I set DELETE api endpoints
+    When I send DELETE HTTP request
+    Then I receive HTTP response code 204
+
+  Scenario: Put - As Admin I have able to update user
+    Given I set PUT api endpoints
+    When I send PUT HTTP request
+    Then I receive HTTP response code 200
+    And I receive valid user latest data

@@ -5,14 +5,20 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
+import starter.user.Delete;
 import starter.user.Get;
 import starter.user.Post;
+import starter.user.Put;
 
 public class UserSteps {
     @Steps
     Get get;
     @Steps
     Post post;
+    @Steps
+    Delete delete;
+    @Steps
+    Put put;
     @Given("I set GET api endpoints")
     public void setGetApiEndpoints(){
         get.setApiEndpoints();
@@ -45,4 +51,34 @@ public class UserSteps {
     public void validateDataNewUser(){
         post.validateDataForDetailUser();
     }
+    @Given("I set DELETE api endpoints")
+    public void setDeleteEndpoint(){
+        delete.setDeleteApiEndpoints();
+    }
+    @When("I send DELETE HTTP request")
+    public void sendDeleteHttpRequest(){
+        delete.sendDeleteHttpRequest();
+    }
+    @Then("I receive HTTP response code 204")
+    public void validateHttpResponse204(){
+        delete.validateHttpResponseCode204();
+    }
+    @Given("I set PUT api endpoints")
+    public void setPutEndpoint(){
+        put.setPutApiEndpoints();
+    }
+    @When("I send PUT HTTP request")
+    public void sendPutHttpRequest(){
+        put.sendPutHttpRequest();
+    }
+    @Then("I receive HTTP response code 200")
+    public void validatePutHttpResponse200(){
+        put.receivedHttpResponseCode200();
+    }
+    @And("I receive valid user latest data")
+    public void validateUserLatestData(){
+        put.validateDataLatestUser();
+    }
+
+
 }
