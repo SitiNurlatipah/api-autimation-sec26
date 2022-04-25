@@ -73,7 +73,7 @@ public class UserSteps {
     }
     @Then("I receive HTTP response code 201")
     public void validatePutHttpResponse200(){
-        put.receivedHttpResponseCode200();
+        put.receivedHttpResponseCode201();
     }
     @And("I receive valid user latest data")
     public void validateUserLatestData(){

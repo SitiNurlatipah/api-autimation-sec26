@@ -23,5 +23,5 @@ Feature: User
   Scenario: Put - As Admin I have able to update user
     Given I set PUT api endpoints
     When I send PUT HTTP request
-    Then I receive HTTP response code 200
+    Then I receive HTTP response code 201
     And I receive valid user latest data
