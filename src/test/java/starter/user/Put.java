@@ -24,8 +24,8 @@ public class Put {
 
     }
     @Step
-    public void receivedHttpResponseCode200(){
-        restAssuredThat(response->response.statusCode(200));
+    public void receivedHttpResponseCode201(){
+        restAssuredThat(response->response.statusCode(201));
     }
     @Step
     public void validateDataLatestUser(){

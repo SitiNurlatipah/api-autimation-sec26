@@ -71,7 +71,7 @@ public class UserSteps {
     public void sendPutHttpRequest(){
         put.sendPutHttpRequest();
     }
-    @Then("I receive HTTP response code 200")
+    @Then("I receive HTTP response code 201")
     public void validatePutHttpResponse200(){
         put.receivedHttpResponseCode200();
     }
